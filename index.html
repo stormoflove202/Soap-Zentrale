@@ -1,151 +1,66 @@
-SoapZentrale Logo
-Suche...
- 🔍
-☰
-SoapZentrale Header
-Start Vorschau Rückblick News Evergreens Tatort Community
-Diese Woche in deiner Lieblingssoap
-Sturm der Liebe
-Liebeschaos im Fürstenhof!
 
-Rote Rosen
-Heimliche Affären und ein Geständnis.
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>SoapZentrale</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-Unter uns
-Eine Lüge wird enttarnt.
+<header class="hero">
+    <div class="topbar">
+        <img src="logo.png" alt="SoapZentrale Logo" class="logo">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Suche...">
+            <button onclick="searchArticles()">🔍</button>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+    <img src="header.jpg" alt="SoapZentrale Header" class="header-image">
+</header>
 
-Alles was zählt
-Neue Intrigen am Zentrum.
+<nav class="navbar" id="navbar">
+    <a href="#">Start</a>
+    <a href="#">Vorschau</a>
+    <a href="#">Rückblick</a>
+    <a href="#">News</a>
+    <a href="#">Evergreens</a>
+    <a href="#">Tatort</a>
+    <a href="#">Community</a>
+</nav>
 
-GZSZ
-Ein Abschied verändert alles.
+<main class="content">
+    <section class="section-title">Diese Woche in deiner Lieblingssoap</section>
+    <div class="soap-grid" id="articles">
+        <div class="soap-card sdl"><h3>Sturm der Liebe</h3><p>Liebeschaos im Fürstenhof!</p></div>
+        <div class="soap-card rr"><h3>Rote Rosen</h3><p>Heimliche Affären und ein Geständnis.</p></div>
+        <div class="soap-card uu"><h3>Unter uns</h3><p>Eine Lüge wird enttarnt.</p></div>
+        <div class="soap-card awz"><h3>Alles was zählt</h3><p>Neue Intrigen am Zentrum.</p></div>
+        <div class="soap-card gzsz"><h3>GZSZ</h3><p>Ein Abschied verändert alles.</p></div>
+        <div class="soap-card tatort"><h3>Tatort</h3><p>Samstagabend-Spannung.</p></div>
+    </div>
+</main>
 
-Tatort
-Samstagabend-Spannung.
+<footer>
+    <p>© 2025 SoapZentrale | Fanprojekt – keine Verbindung zu RTL / Das Erste.</p>
+</footer>
 
-© 2025 SoapZentrale | Fanprojekt – keine Verbindung zu RTL / Das Erste.
-
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fefefe;
-    color: #222;
-}
-
-.hero {
-    background-color: #d7f5e9;
-    text-align: center;
-}
-
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    background-color: #d7f5e9;
-    z-index: 10;
-}
-
-.logo {
-    max-height: 50px;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.search-container input {
-    padding: 6px 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 0.9rem;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.header-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #e6f3ed;
-    padding: 12px;
-    transition: max-height 0.3s ease;
-    overflow: hidden;
-}
-
-.navbar a {
-    margin: 8px 12px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #00695c;
-}
-
-.navbar.active {
-    max-height: 500px;
-}
-
-.section-title {
-    font-size: 1.6rem;
-    margin: 30px 20px 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.soap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.soap-card {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-    border-left: 6px solid #ccc;
-}
-
-.sdl { border-color: darkgreen; background-color: #e0f2f1; }
-.rr { border-color: red; background-color: #fdecea; }
-.uu { border-color: orange; background-color: #fff3e0; }
-.awz { border-color: darkred; background-color: #fbe9e7; }
-.gzsz { border-color: indigo; background-color: #f3e5f5; }
-.tatort { border-color: darkblue; background-color: #e3f2fd; }
-
-footer {
-    text-align: center;
-    font-size: 0.9em;
-    padding: 30px 10px;
-    background-color: #f0f0f0;
-    margin-top: 40px;
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-    .navbar {
-        flex-direction: column;
-        max-height: 0;
-    }
-    .navbar a {
-        margin: 10px 0;
+<script>
+function searchArticles() {
+    var input = document.getElementById("searchInput").value.toLowerCase();
+    var articles = document.getElementById("articles").getElementsByClassName("soap-card");
+    for (var i = 0; i < articles.length; i++) {
+        var text = articles[i].innerText.toLowerCase();
+        articles[i].style.display = text.includes(input) ? "" : "none";
     }
 }
+function toggleMenu() {
+    var nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
