@@ -2,65 +2,101 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>SoapZentrale</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>SoapZentrale</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
 <header class="hero">
-    <div class="topbar">
-        <img src="logo.png" alt="SoapZentrale Logo" class="logo">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Suche...">
-            <button onclick="searchArticles()">🔍</button>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </div>
-    <img src="header.jpg" alt="SoapZentrale Header" class="header-image">
+  <img src="logo.png" alt="SoapZentrale Logo" class="logo">
+  <img src="header.jpg" alt="SoapZentrale Header" class="header-image">
 </header>
-
-<nav class="navbar" id="navbar">
-    <a href="#">Start</a>
-    <a href="#">Vorschau</a>
-    <a href="#">Rückblick</a>
-    <a href="#">News</a>
-    <a href="#">Evergreens</a>
-    <a href="#">Tatort</a>
-    <a href="#">Community</a>
+<nav class="navbar">
+  <a href="#">Vorschau</a>
+  <a href="#">Wochenrückblick</a>
+  <a href="#">Evergreens</a>
+  <a href="#">Community</a>
+  <a href="#">Meinungen</a>
 </nav>
-
 <main class="content">
-    <section class="section-title">Diese Woche in deiner Lieblingssoap</section>
-    <div class="soap-grid" id="articles">
-        <div class="soap-card sdl"><h3>Sturm der Liebe</h3><p>Liebeschaos im Fürstenhof!</p></div>
-        <div class="soap-card rr"><h3>Rote Rosen</h3><p>Heimliche Affären und ein Geständnis.</p></div>
-        <div class="soap-card uu"><h3>Unter uns</h3><p>Eine Lüge wird enttarnt.</p></div>
-        <div class="soap-card awz"><h3>Alles was zählt</h3><p>Neue Intrigen am Zentrum.</p></div>
-        <div class="soap-card gzsz"><h3>GZSZ</h3><p>Ein Abschied verändert alles.</p></div>
-        <div class="soap-card tatort"><h3>Tatort</h3><p>Samstagabend-Spannung.</p></div>
+  <!-- Vorschau Navigation -->
+  <section class="section preview-nav">
+    <h2>Vorschau</h2>
+    <div class="nav-grid">
+      <a href="#" class="nav-item sdl">Sturm der Liebe</a>
+      <a href="#" class="nav-item rr">Rote Rosen</a>
+      <a href="#" class="nav-item uu">Unter uns</a>
+      <a href="#" class="nav-item awz">Alles was zählt</a>
+      <a href="#" class="nav-item gzsz">GZSZ</a>
+      <a href="#" class="nav-item tatort">Tatort</a>
     </div>
+  </section>
+  <!-- Wochenrückblick -->
+  <section class="section recap">
+    <h2>Wochenrückblick</h2>
+    <p>Letzte Woche: Drama, Liebesgeständnisse & überraschende Wendungen in all deinen Soaps!</p>
+  </section>
+  <!-- Evergreen Artikel -->
+  <section class="section evergreen">
+    <h2>Evergreen-Artikel</h2>
+    <div class="article-grid">
+      <article>
+        <img src="evergreen1.jpg" alt="">
+        <h3>Die größten Soap-Skandale</h3>
+        <p>Alles über die legendärsten Skandale im Fürstenhof & Co.</p>
+      </article>
+      <article>
+        <img src="evergreen2.jpg" alt="">
+        <h3>Beliebteste Paare im Rückblick</h3>
+        <p>Die unvergesslichen Liebesgeschichten von GZSZ bis Unter uns.</p>
+      </article>
+      <article>
+        <img src="evergreen3.jpg" alt="">
+        <h3>Soap-Stars damals & heute</h3>
+        <p>Karriere-Updates deiner Lieblingsdarsteller.</p>
+      </article>
+      <article>
+        <img src="evergreen4.jpg" alt="">
+        <h3>Vergessene Storylines</h3>
+        <p>Die Handlungsstränge, die du vielleicht verpasst hast.</p>
+      </article>
+      <article>
+        <img src="evergreen5.jpg" alt="">
+        <h3>Hinter den Kulissen</h3>
+        <p>Blicke hinter die Kamera & ins Set-Leben.</p>
+      </article>
+      <article>
+        <img src="evergreen6.jpg" alt="">
+        <h3>Fan-Theorien</h3>
+        <p>Die verrücktesten Theorien der Soap-Community.</p>
+      </article>
+    </div>
+  </section>
+  <!-- Community Navigation -->
+  <section class="section community-nav">
+    <h2>Community</h2>
+    <div class="nav-grid">
+      <a href="#" class="nav-item sdl">Sturm der Liebe Forum</a>
+      <a href="#" class="nav-item rr">Rote Rosen Forum</a>
+      <a href="#" class="nav-item uu">Unter uns Forum</a>
+      <a href="#" class="nav-item awz">Alles was zählt Forum</a>
+      <a href="#" class="nav-item gzsz">GZSZ Forum</a>
+      <a href="#" class="nav-item tatort">Tatort Forum</a>
+    </div>
+  </section>
+  <!-- Meinungsbeiträge -->
+  <section class="section opinions">
+    <h2>Meinungen</h2>
+    <div class="opinions-grid">
+      <div class="opinion-card"><h3>Warum Ringo & Easy uns begeistern</h3></div>
+      <div class="opinion-card"><h3>Ist die neue Storyline bei SDL zu konstruiert?</h3></div>
+      <div class="opinion-card"><h3>AWZ: Wer ist der heimliche Star?</h3></div>
+    </div>
+  </section>
 </main>
-
 <footer>
-    <p>© 2025 SoapZentrale | Fanprojekt – keine Verbindung zu RTL / Das Erste.</p>
+  <p>© 2025 SoapZentrale | Fanprojekt – keine Verbindung zu RTL/Das Erste.</p>
 </footer>
-
-<script>
-function searchArticles() {
-    var input = document.getElementById("searchInput").value.toLowerCase();
-    var articles = document.getElementById("articles").getElementsByClassName("soap-card");
-    for (var i = 0; i < articles.length; i++) {
-        var text = articles[i].innerText.toLowerCase();
-        articles[i].style.display = text.includes(input) ? "" : "none";
-    }
-}
-function toggleMenu() {
-    var nav = document.getElementById("navbar");
-    nav.classList.toggle("active");
-}
-</script>
-
 </body>
 </html>
